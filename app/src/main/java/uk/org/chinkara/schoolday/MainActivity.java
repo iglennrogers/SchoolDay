@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import java.util.Calendar;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -36,8 +37,9 @@ public class MainActivity extends AppCompatActivity implements LessonFragment.On
         super.onStart();
         Log.d("Act", "Enter onStart");
         _lesson_frag = (LessonFragment)getSupportFragmentManager().findFragmentById(R.id.fragLesson);
+        Calendar cal = Calendar.getInstance();
         _timer = new Timer();
-        _timer.schedule(new RefreshLessonTask(), 0, 60*1000);
+        _timer.schedule(new RefreshLessonTask(), (60 - cal.get(Calendar.SECOND))*1000, 60*1000);
         Log.d("Act", "Exit onStart");
     }
 
