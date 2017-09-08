@@ -1,0 +1,619 @@
+{
+    "structure": {
+        "timezone": "Europe/London",
+        "weekcycle": 2,
+        "terms": [
+            {
+                "start": "4/9/2017",
+                "end": "20/10/2017",
+                "startweek": 1
+            },
+            {
+                "start": "30/10/2017",
+                "end": "21/12/2017",
+                "startweek": 2
+            },
+            {
+                "start": "4/1/2018",
+                "end": "11/2/2018",
+                "startweek": 1
+            },
+            {
+                "start": "18/2/2018",
+                "end": "29/3/2018",
+                "startweek": 2
+            },
+            {
+                "start": "16/4/2018",
+                "end": "25/5/2018",
+                "startweek": 1
+            },
+            {
+                "start": "3/6/2018",
+                "end": "23/7/2018",
+                "startweek": 2
+            }
+        ],
+        "override": [
+            {
+                "date": "4/9/2017",
+                "plan": "inset"
+            },
+            {
+                "date": "5/9/2017",
+                "plan": "inset"
+            },
+            {
+                "date": "20/10/2017",
+                "plan": "inset"
+            },
+            {
+                "date": "21/12/2017",
+                "plan": "inset"
+            },
+            {
+                "date": "23/7/2018",
+                "plan": "inset"
+            },
+            {
+                "date": "20/12/2017",
+                "plan": "term end"
+            },
+            {
+                "date": "29/3/2018",
+                "plan": "term end"
+            },
+            {
+                "date": "20/7/2018",
+                "plan": "term end"
+            }
+        ],
+        "subjects": [
+
+            {"Ar": "Art"},
+            {"Dr": "Drama"},
+            {"En": "English"},
+            {"Fo": "Form"},
+            {"Fr": "French"},
+            {"Gg": "Geography"},
+            {"Hi": "History"},
+            {"It": "IT"},
+            {"Ma": "Maths"},
+            {"Mu": "Music"},
+            {"Pc": "Games"},
+            {"Re": "RE"},
+            {"Sc": "Science"},
+            {"Te": "Technology"}
+        ],
+        "lessons": [
+            {
+                "plan": "default",
+                "timetable": [
+                    {
+                        "period": 1,
+                        "start": "8:40",
+                        "end": "9:35"
+                    },
+                    {
+                        "period": 2,
+                        "start": "9:35",
+                        "end": "10:25"
+                    },
+                    {
+                        "period": "break",
+                        "start": "10:25",
+                        "end": "10:45"
+                    },
+                    {
+                        "period": 3,
+                        "start": "10:45",
+                        "end": "11:40"
+                    },
+                    {
+                        "period": 4,
+                        "start": "11:40",
+                        "end": "12:30"
+                    },
+                    {
+                        "period": "break",
+                        "start": "12:30",
+                        "end": "13:10"
+                    },
+                    {
+                        "period": 5,
+                        "start": "13:10",
+                        "end": "14:05"
+                    },
+                    {
+                        "period": 6,
+                        "start": "14:05",
+                        "end": "14:55"
+                    },
+                    {
+                        "period": 7,
+                        "start": "14:55",
+                        "end": "15:15"
+                    }
+                ]
+            },
+            {
+                "plan": "inset",
+                "timetable": [
+                ]
+            },
+            {
+                "plan": "term end",
+                "timetable": [
+                    {
+                        "period": 1,
+                        "start": "8:40",
+                        "end": "9:35"
+                    },
+                    {
+                        "period": 2,
+                        "start": "9:35",
+                        "end": "10:25"
+                    },
+                    {
+                        "period": "break",
+                        "start": "10:25",
+                        "end": "10:45"
+                    },
+                    {
+                        "period": 3,
+                        "start": "10:45",
+                        "end": "11:40"
+                    },
+                    {
+                        "period": 4,
+                        "start": "11:40",
+                        "end": "12:30"
+                    }
+                ]
+            }
+        ]
+    },
+    "personal": {
+        "timetable": [
+            {
+                "week": 1,
+                "monday": [
+                    {
+                        "period": 1,
+                        "subject": "Fr",
+                        "room": "303",
+                        "teacher": "ENC"
+                    },
+                    {
+                        "period": 2,
+                        "subject": "Ma",
+                        "room": "210",
+                        "teacher": "MAC"
+                    },
+                    {
+                        "period": 3,
+                        "subject": "En",
+                        "room": "305",
+                        "teacher": "TAV"
+                    },
+                    {
+                        "period": 4,
+                        "subject": "Hi",
+                        "room": "305",
+                        "teacher": "TUA"
+                    },
+                    {
+                        "period": 5,
+                        "subject": "Pc",
+                        "room": "All Weather",
+                        "teacher": "PTR",
+                        "span": 2
+                    },
+                    {
+                        "period": 7,
+                        "subject": "Fo",
+                        "room": "313",
+                        "teacher": "COF"
+                    }
+                ],
+                "tuesday": [
+                    {
+                        "period": 1,
+                        "subject": "Fr",
+                        "room": "315",
+                        "teacher": "FEK"
+                    },
+                    {
+                        "period": 2,
+                        "subject": "Fr",
+                        "room": "303",
+                        "teacher": "ENC"
+                    },
+                    {
+                        "period": 3,
+                        "subject": "En",
+                        "room": "305",
+                        "teacher": "WAR"
+                    },
+                    {
+                        "period": 4,
+                        "subject": "Hi",
+                        "room": "209",
+                        "teacher": "TUA"
+                    },
+                    {
+                        "period": 5,
+                        "subject": "Ma",
+                        "room": "210",
+                        "teacher": "MAY"
+                    },
+                    {
+                        "period": 6,
+                        "subject": "It",
+                        "room": "LRM",
+                        "teacher": "MAY"
+                    },
+                    {
+                        "period": 7,
+                        "subject": "Fo",
+                        "room": "313",
+                        "teacher": "COF"
+                    }
+                ],
+                "wednesday": [
+                    {
+                        "period": 1,
+                        "subject": "Ma",
+                        "room": "303",
+                        "teacher": "MAC",
+                        "span": 2
+                    },
+                    {
+                        "period": 3,
+                        "subject": "Sc",
+                        "room": "110",
+                        "teacher": "DAL"
+                    },
+                    {
+                        "period": 4,
+                        "subject": "Te",
+                        "room": "022",
+                        "teacher": "WHI"
+                    },
+                    {
+                        "period": 5,
+                        "subject": "Te",
+                        "room": "022",
+                        "teacher": "WHI"
+                    },
+                    {
+                        "period": 6,
+                        "subject": "Dr",
+                        "room": "062",
+                        "teacher": "WIN"
+                    },
+                    {
+                        "period": 7,
+                        "subject": "Fo",
+                        "room": "313",
+                        "teacher": "COF"
+                    }
+                ],
+                "thursday": [
+                    {
+                        "period": 1,
+                        "subject": "Sc",
+                        "room": "110",
+                        "teacher": "DAL"
+                    },
+                    {
+                        "period": 2,
+                        "subject": "Gg",
+                        "room": "049",
+                        "teacher": "WHE"
+                    },
+                    {
+                        "period": 3,
+                        "subject": "Fr",
+                        "room": "303",
+                        "teacher": "FEK"
+                    },
+                    {
+                        "period": 4,
+                        "subject": "Mu",
+                        "room": "063",
+                        "teacher": "SNE"
+                    },
+                    {
+                        "period": 5,
+                        "subject": "Te",
+                        "room": "022",
+                        "teacher": "WHI"
+                    },
+                    {
+                        "period": 6,
+                        "subject": "En",
+                        "room": "305",
+                        "teacher": "WAR"
+                    },
+                    {
+                        "period": 7,
+                        "subject": "Fo",
+                        "room": "313",
+                        "teacher": "COF"
+                    }
+                ],
+                "friday": [
+                    {
+                        "period": 1,
+                        "subject": "En",
+                        "room": "305",
+                        "teacher": "TAV"
+                    },
+                    {
+                        "period": 2,
+                        "subject": "Te",
+                        "room": "022",
+                        "teacher": "WHI"
+                    },
+                    {
+                        "period": 3,
+                        "subject": "Re",
+                        "room": "069",
+                        "teacher": "BIB"
+                    },
+                    {
+                        "period": 4,
+                        "subject": "Ar",
+                        "room": "058",
+                        "teacher": "OVE"
+                    },
+                    {
+                        "period": 5,
+                        "subject": "Hi",
+                        "room": "209",
+                        "teacher": "TUA"
+                    },
+                    {
+                        "period": 6,
+                        "subject": "It",
+                        "room": "LRM",
+                        "teacher": "HOC"
+                    },
+                    {
+                        "period": 7,
+                        "subject": "Fo",
+                        "room": "313",
+                        "teacher": "COF"
+                    }
+                ]
+            },
+            {
+                "week": 2,
+                "monday": [
+                    {
+                        "period": 1,
+                        "subject": "Ma",
+                        "room": "210",
+                        "teacher": "MAY"
+                    },
+                    {
+                        "period": 2,
+                        "subject": "En",
+                        "room": "305",
+                        "teacher": "WAR"
+                    },
+                    {
+                        "period": 3,
+                        "subject": "Mu",
+                        "room": "063",
+                        "teacher": "SNE"
+                    },
+                    {
+                        "period": 4,
+                        "subject": "Hi",
+                        "room": "209",
+                        "teacher": "TUA"
+                    },
+                    {
+                        "period": 5,
+                        "subject": "Ar",
+                        "room": "059",
+                        "teacher": "CAR"
+                    },
+                    {
+                        "period": 6,
+                        "subject": "Dr",
+                        "room": "062",
+                        "teacher": "WIN"
+                    },
+                    {
+                        "period": 7,
+                        "subject": "Fo",
+                        "room": "313",
+                        "teacher": "COF"
+                    }
+                ],
+                "tuesday": [
+                    {
+                        "period": 1,
+                        "subject": "Gg",
+                        "room": "051",
+                        "teacher": "SBA"
+                    },
+                    {
+                        "period": 2,
+                        "subject": "Fr",
+                        "room": "315",
+                        "teacher": "FEK"
+                    },
+                    {
+                        "period": 3,
+                        "subject": "Ar",
+                        "room": "058",
+                        "teacher": "CAR"
+                    },
+                    {
+                        "period": 4,
+                        "subject": "En",
+                        "room": "305",
+                        "teacher": "WAR"
+                    },
+                    {
+                        "period": 5,
+                        "subject": "Sc",
+                        "room": "110",
+                        "teacher": "DAL",
+                        "span": 2
+                    },
+                    {
+                        "period": 7,
+                        "subject": "Fo",
+                        "room": "313",
+                        "teacher": "COF"
+                    }
+                ],
+                "wednesday": [
+                    {
+                        "period": 1,
+                        "subject": "Pc",
+                        "room": "All Weather",
+                        "teacher": "PTR",
+                        "span": 2
+                    },
+                    {
+                        "period": 3,
+                        "subject": "Fr",
+                        "room": "303",
+                        "teacher": "ENC"
+                    },
+                    {
+                        "period": 4,
+                        "subject": "Re",
+                        "room": "21D",
+                        "teacher": "HTY"
+                    },
+                    {
+                        "period": 5,
+                        "subject": "Ma",
+                        "room": "210",
+                        "teacher": "MAC"
+                    },
+                    {
+                        "period": 6,
+                        "subject": "Sc",
+                        "room": "110",
+                        "teacher": "DAL"
+                    },
+                    {
+                        "period": 7,
+                        "subject": "Fo",
+                        "room": "313",
+                        "teacher": "COF"
+                    }
+                ],
+                "thursday": [
+                    {
+                        "period": 1,
+                        "subject": "Sc",
+                        "room": "110",
+                        "teacher": "DAL"
+                    },
+                    {
+                        "period": 2,
+                        "subject": "Dr",
+                        "room": "062",
+                        "teacher": "WIN"
+                    },
+                    {
+                        "period": 3,
+                        "subject": "Ar",
+                        "room": "058",
+                        "teacher": "OVE"
+                    },
+                    {
+                        "period": 4,
+                        "subject": "Gg",
+                        "room": "049",
+                        "teacher": "WHE"
+                    },
+                    {
+                        "period": 5,
+                        "subject": "Re",
+                        "room": "21D",
+                        "teacher": "HTY"
+                    },
+                    {
+                        "period": 6,
+                        "subject": "En",
+                        "room": "305",
+                        "teacher": "WAR"
+                    },
+                    {
+                        "period": 7,
+                        "subject": "Fo",
+                        "room": "313",
+                        "teacher": "COF"
+                    }
+                ],
+                "friday": [
+                    {
+                        "period": 1,
+                        "subject": "Pc",
+                        "room": "All Weather",
+                        "teacher": "PTR",
+                        "span": 2
+                    },
+                    {
+                        "period": 3,
+                        "subject": "Gg",
+                        "room": "049",
+                        "teacher": "SBA"
+                    },
+                    {
+                        "period": 4,
+                        "subject": "En",
+                        "room": "305",
+                        "teacher": "WAR"
+                    },
+                    {
+                        "period": 5,
+                        "subject": "Ma",
+                        "room": "210",
+                        "teacher": "MAC"
+                    },
+                    {
+                        "period": 6,
+                        "subject": "Sc",
+                        "room": "110",
+                        "teacher": "DAL"
+                    },
+                    {
+                        "period": 7,
+                        "subject": "Fo",
+                        "room": "313",
+                        "teacher": "COF"
+                    }
+                ]
+            }
+        ],
+        "clubs": [
+            {
+                "plan": "default",
+                "day": "wednesday",
+                "description": "maths club",
+                "room": "m5",
+                "start": "15:15",
+                "end": "16:00"
+            }
+        ],
+        "override": [
+            {
+                "date": "6/9/2017",
+                "start": "9:00",
+                "end": "17:00",
+                "description": "Party time for today"
+            }
+        ]
+    }
+}

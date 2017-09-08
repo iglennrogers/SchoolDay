@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">School Day</string>
+    <string name="teacher">teacher</string>
+    <string name="room">room</string>
+    <string name="start">start</string>
+    <string name="subject">subject</string>
+</resources>
