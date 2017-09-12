@@ -3,7 +3,6 @@ package uk.org.chinkara.schoolday;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -12,7 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.Calendar;
-import java.util.TimeZone;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import uk.org.chinkara.schoolday.model.SchoolCalendar;
 import uk.org.chinkara.schoolday.model.TimetableItem;
@@ -26,9 +26,7 @@ import uk.org.chinkara.schoolday.model.TimetableItem;
  */
 public class LessonFragment extends Fragment {
 
-    private static final String ARG_COLUMN_COUNT = "column-count";
-    private int mColumnCount = 1;
-    private OnListFragmentInteractionListener mListener;
+    private static final String ARG_DATE_OFFSET = "date-offset";
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -37,11 +35,11 @@ public class LessonFragment extends Fragment {
     public LessonFragment() {
     }
 
-    @SuppressWarnings("unused")
-    public static LessonFragment newInstance(int columnCount) {
+    public static LessonFragment newInstance(int date_offset) {
+
         LessonFragment fragment = new LessonFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_COLUMN_COUNT, columnCount);
+        args.putInt(ARG_DATE_OFFSET, date_offset);
         fragment.setArguments(args);
         return fragment;
     }
@@ -52,7 +50,8 @@ public class LessonFragment extends Fragment {
 
         Log.d("Frag", "Enter onCreate");
         if (getArguments() != null) {
-            mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
+
+            _dateOffset = getArguments().getInt(ARG_DATE_OFFSET);
         }
         Log.d("Frag", "Exit onCreate");
     }
@@ -64,19 +63,16 @@ public class LessonFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_lesson_list, container, false);
 
         // Set the adapter
-        if (view instanceof RecyclerView) {
-            Context context = view.getContext();
-            _recyclerView = (RecyclerView) view;
-            if (mColumnCount <= 1) {
-                _recyclerView.setLayoutManager(new LinearLayoutManager(context));
-            } else {
-                _recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
-            }
+        _recyclerView = view.findViewById(R.id.list);
+        Context context = view.getContext();
+        _recyclerView.setLayoutManager(new LinearLayoutManager(context));
 
-            _displayed_date = Calendar.getInstance(_calendar.timezone());
-            _recyclerView.setAdapter(new MyLessonRecyclerViewAdapter(_calendar.createTimetable(_displayed_date), mListener));
-            refreshDisplay();
-        }
+        Calendar displayedDate = Calendar.getInstance(_calendar.timezone());
+        displayedDate.add(Calendar.DAY_OF_YEAR, _dateOffset);
+
+        _recyclerView.setAdapter(new MyLessonRecyclerViewAdapter(_calendar.createTimetable(displayedDate), mListener));
+        refreshDisplay();
+
         Log.d("Frag", "Exit onCreateView");
         return view;
     }
@@ -105,14 +101,60 @@ public class LessonFragment extends Fragment {
         Log.d("Frag", "Exit onDetach");
     }
 
-    public void refreshDisplay() {
+    @Override
+    public void onStart() {
+
+        super.onStart();
+        Log.d("Frag", "Enter onStart");
+        Calendar cal = Calendar.getInstance();
+        _timer = new Timer();
+        _timer.schedule(new RefreshLessonTask(), (60 - cal.get(Calendar.SECOND))*1000, 60*1000);
+        Log.d("Frag", "Exit onStart");
+    }
+
+    @Override
+    public void onStop() {
+
+        super.onStop();
+        Log.d("Frag", "Enter onStop");
+        if (_timer != null) {
+
+            _timer.cancel();
+            _timer = null;
+        }
+        Log.d("Frag", "Exit onStop");
+    }
+
+    private class RefreshLessonTask extends TimerTask {
+
+        RefreshLessonTask() {
+
+        }
+
+        @Override
+        public void run() {
+
+            getActivity().runOnUiThread(new Runnable() {
+
+                @Override
+                public void run() {
+
+                    refreshDisplay();
+                }
+            });
+        }
+    }
+
+    private void refreshDisplay() {
 
         _recyclerView.getAdapter().notifyDataSetChanged();
     }
 
-    Calendar _displayed_date;
-    SchoolCalendar _calendar;
-    RecyclerView _recyclerView;
+    private int _dateOffset;
+    private SchoolCalendar _calendar;
+    private RecyclerView _recyclerView;
+    private Timer _timer;
+    private OnListFragmentInteractionListener mListener;
 
     /**
      * This interface must be implemented by activities that contain this

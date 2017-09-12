@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/list"
-    android:name="uk.org.chinkara.schoolday.LessonFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginLeft="16dp"
-    android:layout_marginRight="16dp"
-    android:scrollbars="vertical"
-    app:layoutManager="LinearLayoutManager"
-    tools:context="uk.org.chinkara.schoolday.LessonFragment"
-    tools:listitem="@layout/fragment_lesson" />
+    android:orientation="vertical">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:name="uk.org.chinkara.schoolday.LessonFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:scrollbars="vertical"
+        app:layoutManager="LinearLayoutManager"
+        tools:context="uk.org.chinkara.schoolday.LessonFragment"
+        tools:listitem="@layout/fragment_lesson">
+
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

@@ -29,6 +29,7 @@ import uk.org.chinkara.schoolday.model.structure.TermStructure;
 public class SchoolCalendar {
 
     public static final SimpleDateFormat date_format = new SimpleDateFormat("dd/MM/yyyy", Locale.UK);
+    public static final SimpleDateFormat day_format = new SimpleDateFormat("EEEE", Locale.UK);
     public static final SimpleDateFormat time_format = new SimpleDateFormat("HH:mm", Locale.UK);
 
     public SchoolCalendar(Context context)

@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#ff4081</color>
     <color name="current">#FFDC143C</color>
     <color name="break_time">#FFE0FFFF</color>
     <color name="even">#FF7FFFD4</color>
