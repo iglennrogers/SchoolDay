@@ -96,7 +96,7 @@ public class SchoolCalendar {
         if (!isTermTime(date)) {
 
             Log.d("Schoolday", "Holidays, Date: " + SchoolCalendar.date_format.format(date.getTime()));
-            items.add(TimetableItem.createHolidays());
+            items.add(new TimetableItem().new Holiday());
             return items;
         }
 
@@ -104,14 +104,14 @@ public class SchoolCalendar {
         if (plan.size() == 0) {
 
             // inset day
-            items.add(TimetableItem.createHolidays());
+            items.add(new TimetableItem().new InsetDay());
             return items;
         }
         DayLessons lessons = lessonDetail(date);
         if (lessons == null) {
 
             // probably the weekend
-            items.add(TimetableItem.createHolidays());
+            items.add(new TimetableItem().new Weekend());
             return items;
         }
 

@@ -1,5 +1,6 @@
 package uk.org.chinkara.schoolday.model;
 
+import java.sql.Time;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.Locale;
@@ -10,9 +11,64 @@ import uk.org.chinkara.schoolday.model.structure.LessonTimes;
 
 public class TimetableItem {
 
-    static TimetableItem createHolidays() {
+    class Holiday extends TimetableItem {
 
-        return new TimetableItem(0, "Holiday");
+        public String startTime() {
+
+            return "";
+        }
+
+        public String description() {
+
+            return "Holiday";
+        }
+
+        @Override
+        public String toString() {
+
+            return String.format(Locale.getDefault(), "TimetableItem.Holiday(Desc: %s)", _description);
+        }
+    }
+
+    class InsetDay extends TimetableItem {
+
+        public String startTime() {
+
+            return "";
+        }
+
+        public String description() {
+
+            return "Inset Day";
+        }
+
+        @Override
+        public String toString() {
+
+            return String.format(Locale.getDefault(), "TimetableItem.InsetDay(Desc: %s)", _description);
+        }
+    }
+
+    class Weekend extends TimetableItem {
+
+        public String startTime() {
+
+            return "";
+        }
+
+        public String description() {
+
+            return "Weekend";
+        }
+
+        @Override
+        public String toString() {
+
+            return String.format(Locale.getDefault(), "TimetableItem.Weekend(Desc: %s)", _description);
+        }
+    }
+
+    TimetableItem() {
     }
 
     TimetableItem(SchoolCalendar cal, LessonDetail detail, LessonTimes times) {
@@ -33,14 +89,6 @@ public class TimetableItem {
             _room = detail.room();
             _teacher = detail.teacher();
         }
-    }
-
-    private TimetableItem(int period, String description) {
-
-        _period = period;
-        _start = null;
-        _end = null;
-        _description = description;
     }
 
     public boolean isBreak() {
@@ -65,14 +113,7 @@ public class TimetableItem {
 
     public String startTime() {
 
-        if (_start != null) {
-
-            return SchoolCalendar.time_format.format(_start.getTime());
-        }
-        else {
-
-            return "";
-        }
+        return SchoolCalendar.time_format.format(_start.getTime());
     }
 
     public String description() {
