@@ -70,13 +70,13 @@ public class LessonFragment extends Fragment {
         Calendar displayedDate = Calendar.getInstance(_calendar.timezone());
         displayedDate.add(Calendar.DAY_OF_YEAR, _dateOffset);
 
-        _recyclerView.setAdapter(new MyLessonRecyclerViewAdapter(_calendar.createTimetable(displayedDate), mListener));
+        _recyclerView.setAdapter(new MyLessonRecyclerViewAdapter(_dateOffset,
+                _calendar.createTimetable(displayedDate), mListener));
         refreshDisplay();
 
         Log.d("Frag", "Exit onCreateView");
         return view;
     }
-
 
     @Override
     public void onAttach(Context context) {

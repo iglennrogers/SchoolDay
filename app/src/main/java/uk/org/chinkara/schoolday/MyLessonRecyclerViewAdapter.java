@@ -20,10 +20,13 @@ import java.util.List;
  */
 class MyLessonRecyclerViewAdapter extends RecyclerView.Adapter<MyLessonRecyclerViewAdapter.ViewHolder> {
 
+    private final int _dateOffset;
     private final List<TimetableItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    MyLessonRecyclerViewAdapter(List<TimetableItem> items, OnListFragmentInteractionListener listener) {
+    MyLessonRecyclerViewAdapter(int dateOffset, List<TimetableItem> items, OnListFragmentInteractionListener listener) {
+
+        _dateOffset = dateOffset;
         mValues = items;
         mListener = listener;
     }
@@ -52,7 +55,7 @@ class MyLessonRecyclerViewAdapter extends RecyclerView.Adapter<MyLessonRecyclerV
         holder.mTeacherView.setText(item.teacher());
 
         int colour;
-        if (item.currentTimeWithin()) {
+        if (item.currentTimeWithin() && (_dateOffset == 0)) {
 
             colour = ContextCompat.getColor((Context)mListener, R.color.current);
         }

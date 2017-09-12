@@ -205,7 +205,7 @@
                     {
                         "period": 5,
                         "subject": "Pc",
-                        "room": "All Weather",
+                        "room": "Pitch",
                         "teacher": "PTR",
                         "span": 2
                     },
@@ -477,7 +477,7 @@
                     {
                         "period": 1,
                         "subject": "Pc",
-                        "room": "All Weather",
+                        "room": "Pitch",
                         "teacher": "PTR",
                         "span": 2
                     },
@@ -560,7 +560,7 @@
                     {
                         "period": 1,
                         "subject": "Pc",
-                        "room": "All Weather",
+                        "room": "Pitch",
                         "teacher": "PTR",
                         "span": 2
                     },
